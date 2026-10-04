@@ -1,4 +1,7 @@
-<?php require_once __DIR__ . "/../../repositories/book-repository.php";?>
+<?php
+require_once __DIR__ . "/../../repositories/book-repository.php";
+$books = getBooks();
+?>
 
 <!DOCTYPE html>
 <html lang="id">
@@ -58,7 +61,7 @@
               </tr>
             </thead>
             <tbody>
-              <?php foreach($books as $index => $books):?>
+              <?php foreach($books as $index => $book): ?>
                  <tr>
                 <td>
                   <div class="cell-primary">
@@ -73,7 +76,7 @@
                 <td><span class="badge badge-muted"><?= $book['category'] ?></span></td>
                 <td>
                   <div class="chip-list">
-                    <span class="chip"><?= $book['authors'] ?></span>
+                    <span class="chip"> <?php echo implode(', ', $book['authors']); ?></span>
                   </div>
                 </td>
                 <td><?= $book['stock'] ?></td>
