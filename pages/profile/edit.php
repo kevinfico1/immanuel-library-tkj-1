@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . "/../../repositories/user-repository.php";
+$user = getUser();
+$profile = getProfile();
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,21 +12,6 @@
   <link rel="stylesheet" href="../../styles/profile/edit.css">
 </head>
 <body>
-  <?php
-  $user = [
-      "id"    => 1,
-      "name"  => "Budi Santoso",
-      "email" => "budi.santoso@siswa.ski.sch.id",
-      "role"  => "member",
-  ];
-
-  $profile = [
-      "user_id" => 1,
-      "phone"   => "0812-3456-7890",
-      "address" => "Jl. Merdeka No. 21, Pontianak, Kalimantan Barat",
-      "bio"     => "Murid kelas XI TKJ yang gemar membaca novel fiksi dan buku pengembangan diri.",
-  ];
-  ?>
   <div class="app-shell">
  
   <?php   require_once __DIR__ . '/../../components/admin/sidebar.php';?>
@@ -34,7 +24,8 @@
   require_once __DIR__ . '/../../components/admin/topbar.php';?>
 
       <div class="app-content">
-        <form method="" action="">
+        <form method="post" action="../../actions/profile/update.php">  
+          <input type="hidden" name="id" value="<?= $user['id'] ?>">
           <div class="form-card" style="margin-bottom:20px;">
             <div class="form-section-title">Data Akun</div>
             <div class="form-row">

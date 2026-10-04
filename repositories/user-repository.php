@@ -15,3 +15,13 @@ function getUser() {
   $user = ["id" => 2, "name" => "Budi Santoso", "email" => "budi.santoso@siswa.ski.sch.id", "role" => "member"];
   return $user;
 }
+
+function getprofile(){
+  $profile = [
+    "user_id" => 2,
+    "phone" => "0812-3456-7890",
+    "address" => "Jl. Merdeka No. 21, Pontianak, Kalimantan Barat",
+    "bio" => "Murid kelas XI TKJ yang gemar membaca novel fiksi dan buku pengembangan diri.",
+  ];
+  return $profile;
+}
