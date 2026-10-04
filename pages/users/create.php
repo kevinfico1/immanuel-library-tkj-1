@@ -19,7 +19,7 @@
   require_once __DIR__ . '/../../components/admin/topbar.php';?>
 
       <div class="app-content">
-        <form method="" action="">
+        <form method="post" action="../../actions/users/store.php">
           <div class="form-card">
             <div class="form-section-title">Data Pengguna</div>
             <div class="form-row">
