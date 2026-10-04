@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . "/../../repositories/author-repository.php";
+$author = getAuthor();
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 
@@ -9,13 +14,6 @@
 </head>
 
 <body>
-  <?php
-  $author = [
-    "id" => 1,
-    "name" => "Andrea Hirata",
-    "bio" => "Penulis asal Belitung, dikenal lewat novel Laskar Pelangi.",
-  ];
-  ?>
   <div class="app-shell">
     
     <?php   require_once __DIR__ . '/../../components/admin/sidebar.php'; ?>
@@ -28,7 +26,7 @@
   require_once __DIR__ . '/../../components/admin/topbar.php';?>
     
       <div class="app-content">
-        <form method="" action="">
+        <form method="post" action="../../actions/authors/update.php">
           <input type="hidden" name="id" value="<?= $author['id'] ?>">
           <div class="form-card">
             <div class="form-section-title">Data Penulis</div>

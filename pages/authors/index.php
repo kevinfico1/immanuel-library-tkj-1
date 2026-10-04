@@ -1,3 +1,8 @@
+<?php
+require_once __DIR__ . "/../../repositories/author-repository.php";
+$authors = getAuthors();
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -7,9 +12,6 @@
   <link rel="stylesheet" href="../../styles/authors/index.css">
 </head>
 <body>
-  <?php
-  $author = ["id" => 1, "name" => "Andrea Hirata", "total_books" => 1];
-  ?>
   <div class="app-shell">
   
   <?php   require_once __DIR__ . '/../../components/admin/sidebar.php';?>
@@ -43,6 +45,7 @@
               </tr>
             </thead>
             <tbody>
+              <?php foreach($authors as $author): ?>
               <tr>
                 <td>
                   <div class="cell-primary">
@@ -54,10 +57,11 @@
                 <td>
                   <div class="cell-actions">
                     <a href="edit.php?id=<?= $author['id'] ?>" class="btn btn-outline btn-sm">Edit</a>
-                    <a href="#" class="btn btn-danger btn-sm">Hapus</a>
+                     <a href="../../actions/authors/destroy.php?id=<?= $author['id'] ?>" class="btn btn-danger btn-sm" onclick="return confirm('Yakin ingin menghapus?')">Hapus</a>
                   </div>
                 </td>
               </tr>
+              <?php endforeach ?>
             </tbody>
           </table>
         </div>
