@@ -1,5 +1,5 @@
 <?php
-function getusers(){
+function getUsers(){
 
 $users = [
   ["id" => 1, "name" => "Admin Utama",    "email" => "admin@ski.sch.id",               "role" => "admin"],
@@ -16,7 +16,7 @@ function getUser() {
   return $user;
 }
 
-function getprofile(){
+function getProfile(){
   $profile = [
     "user_id" => 2,
     "phone" => "0812-3456-7890",

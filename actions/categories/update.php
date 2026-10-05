@@ -1,5 +1,5 @@
 <?php
-if (isset($_POST['id']) && isset($_POST['name']) && isset($_POST['description'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update']) && isset($_POST['id']) && isset($_POST['name']) && isset($_POST['description'])) {
     echo "Data kategori berhasil diperbarui";
     echo "<pre>";
     print_r($_POST);
