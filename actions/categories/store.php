@@ -1,6 +1,6 @@
 <?php
-if (isset($_POST['name']) && isset($_POST['description'])) {
-    echo "Data kategori berhasil diterima";
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
+    echo "<h3>Data kategori berhasil diterima</h3>";
     echo "<pre>";
     print_r($_POST);
     echo "</pre>";
