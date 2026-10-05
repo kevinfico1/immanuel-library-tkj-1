@@ -1,10 +1,10 @@
 <?php
-if (isset($_POST['id']) && isset($_POST['name']) && isset($_POST['description'])) {
-    echo "Data kategori berhasil diperbarui";
-    echo "<pre>";
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+
     print_r($_POST);
-    echo "</pre>";
-} else {
-    echo "Data tidak lengkap.";
 }
+
 ?>

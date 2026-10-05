@@ -1,7 +1,8 @@
 <?php
-if (isset($_GET['id'])) {
-    echo "Kategori dengan ID " . $_GET['id'] . " berhasil dihapus (simulasi).";
-} else {
-    echo "ID tidak ditemukan.";
+if (isset($_GET['id']) && $_SERVER['REQUEST_METHOD'] === "GET") {
+    $id = $_GET['id'];
+
+    echo "Kategori dengan id " . htmlspecialchars($id) . " berhasil dihapus.";
 }
+
 ?>

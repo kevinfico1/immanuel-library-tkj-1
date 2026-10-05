@@ -1,10 +1,11 @@
 <?php
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['submit']) && isset($_POST['id']) && isset($_POST['name']) && isset($_POST['email']) && isset($_POST['role'])) {
-    echo "Data pengguna berhasil diperbarui";
-    echo "<pre>";
+if (isset($_POST['update']) && $_SERVER['REQUEST_METHOD'] === "POST") {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $role = $_POST['role'];
+
     print_r($_POST);
-    echo "</pre>";
-} else {
-    echo "Data tidak lengkap.";
 }
+
 ?>
