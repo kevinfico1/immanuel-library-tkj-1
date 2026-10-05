@@ -48,7 +48,7 @@
 
             <div class="form-actions">
               <a href="index.php" class="btn btn-outline">Batal</a>
-              <button type="submit" class="btn btn-primary">Simpan Pengguna</button>
+              <button type="submit" name="store" class="btn btn-primary">Simpan Pengguna</button>
             </div>
           </div>
         </form>
