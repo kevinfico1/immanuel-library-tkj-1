@@ -38,11 +38,11 @@ if (isset($_POST['store']) && $_SERVER['REQUEST_METHOD'] === "POST") {
     $query = "insert into book_author (book_id, author_id) values (:book_id, :author_id)";
     $stmt = $pdo->prepare($query);
 
-    $authorIds = $request['authors_ids'];
+    $authorIds = $request['author_ids'];
     foreach($authorIds as $authorId) {
         $stmt->execute([
             'books_id' => $bookId,
-            'author_id' => htmlspecialchars($authorIds)
+            'author_id' => htmlspecialchars($authorId)
         ]);
     }
 

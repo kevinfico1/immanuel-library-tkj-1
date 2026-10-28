@@ -117,9 +117,9 @@ $pageSubtitle = "Perbarui data buku, kategori, dan penulis";
                   </label>
                 <?php endforeach; ?>
               </div>
-              <?php if (isset($errors['authors_ids'])): ?>
+              <?php if (isset($errors['author_ids'])): ?>
                 <p style="color:red; font-size: 12px; margin-top: 4px;">
-                <?= $errors['authors_ids'] ?>
+                <?= $errors['author_ids'] ?>
               </p>
               <?php endif ?>
             </div>

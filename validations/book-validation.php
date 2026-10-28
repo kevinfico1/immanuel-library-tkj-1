@@ -11,7 +11,7 @@ function getbookRequest($request) {
         "stock" => trim(htmlspecialchars($request['stock'])),
         "description" => trim(htmlspecialchars($request['description'])),
         "category_id" => trim(htmlspecialchars($request['category_id'] )),
-        "authors_ids" => $request['authors_ids'] ?? [],
+        "author_ids" => $request['author_ids'] ?? [],
     ];
 }
 
@@ -55,14 +55,14 @@ function validateBook($request, $ignoreBookId = 0) {
         $errors['description'] = "Deskripsi buku tidak boleh lebih dari 100 karakter";
     }
 
-    if (count($request['authors_ids']) < 1) {
-        $errors['authors_ids'] = "penulis buku wajib dipilih";
+    if (count($request['author_ids']) < 1) {
+        $errors['author_ids'] = "penulis buku wajib dipilih";
     }else {
         $author = getAuthors();
         $validAuthorIds = array_column($author, 'id');
-        foreach ($request['authors_ids'] as $authorId) {
+        foreach ($request['author_ids'] as $authorId) {
             if (!in_array($authorId, $validAuthorIds)) {
-                $errors['authors_ids'] = "ada penulis buku yang di pilih tidak valid";
+                $errors['author_ids'] = "ada penulis buku yang di pilih tidak valid";
             }
         }
     }

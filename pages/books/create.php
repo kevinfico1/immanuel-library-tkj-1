@@ -107,15 +107,15 @@ $pageSubtitle = "Lengkapi data buku, kategori, dan penulis";
               <div class="checkbox-grid">
                 <?php foreach ($authors as $author): ?>
                   <label class="checkbox-item">
-                    <input <?= in_array($author['id'], $old['authors_ids'] ?? []) ? 'checked' : '' ?> type="checkbox" 
-                    name="authors_ids[]" value="<?= $author['id'] ?>">
+                    <input <?= in_array($author['id'], $old['author_ids'] ?? []) ? 'checked' : '' ?> type="checkbox" 
+                    name="author_ids[]" value="<?= $author['id'] ?>">
                     <?= $author['name'] ?>
                   </label>
                 <?php endforeach; ?>
               </div>
-              <?php if (isset($errors['authors_ids'])): ?>
+              <?php if (isset($errors['author_ids'])): ?>
                 <p style="color:red; font-size: 12px; margin-top: 4px;">
-                <?= $errors['authors_ids'] ?>
+                <?= $errors['author_ids'] ?>
               </p>
               <?php endif ?>
             </div>
