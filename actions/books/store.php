@@ -41,7 +41,7 @@ if (isset($_POST['store']) && $_SERVER['REQUEST_METHOD'] === "POST") {
     $authorIds = $request['author_ids'];
     foreach($authorIds as $authorId) {
         $stmt->execute([
-            'books_id' => $bookId,
+            'book_id' => $bookId,
             'author_id' => htmlspecialchars($authorId)
         ]);
     }

@@ -59,7 +59,7 @@ unset ($_SESSION['success'], $_SESSION['errors'], $_SESSION['old']);
               </p>
               <?php endif ?>
         </div>
-        <button value="login" type="submit" class="btn btn-primary btn-block">Masuk</button>
+        <button name="login" type="submit" class="btn btn-primary btn-block">Masuk</button>
       </form>
 
       <p class="form-footer-link">

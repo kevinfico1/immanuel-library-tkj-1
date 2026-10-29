@@ -5,6 +5,7 @@ require_once __DIR__ . "/../repositories/author-repository.php";
 function getbookRequest($request) {
    
     return [
+        "id" => trim(htmlspecialchars($request['id'])),
         "title" => trim(htmlspecialchars($request['title'])),
         "isbn" => trim(htmlspecialchars($request['isbn'])),
         "year" => trim(htmlspecialchars($request['year'])),
